@@ -10,6 +10,16 @@ const initialState: ICounterState = {
 
 const counterReducer = (state = initialState, action: Action<string>) => {
   switch (action.type) {
+    case "COUNTER/INCREMENT":
+      return {
+        ...state,
+        value: state.value + 1,
+      };
+    case "COUNTER/DECREMENT":
+      return {
+        ...state,
+        value: state.value - 1,
+      };
     default:
       return state;
   }
